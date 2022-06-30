@@ -8,7 +8,7 @@ const Home = () => {
         bubbles: true,
         detail: {
           isVisible: true,
-          sidebarContent: 'app1'
+          sidebarContent: 'app2'
         }
       })
     )
@@ -16,7 +16,7 @@ const Home = () => {
 
   return (
     <div className='p-2'>
-      <h1 className='text-blue-900 text-4xl pb-2'>App 1</h1>
+      <h1 className='text-blue-900 text-4xl pb-2'>App 2</h1>
       <button onClick={onClickOpenModal} className='rounded border-solid border-2 border-blue-900 text-blue-900 p-2'>Open Side Bar</button>
     </div>
   )

@@ -45,7 +45,8 @@ module.exports = {
       filename: "remoteEntry.js",
       remotes: {},
       exposes: {
-        "./App1": "./src/App",
+        "./Home": "./src/pages/home/index.tsx",
+        "./Sidebar": "./src/components/sidebar/index.tsx",
       },
       shared: {
         ...deps,
