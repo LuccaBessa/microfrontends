@@ -43,7 +43,9 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "app1",
       filename: "remoteEntry.js",
-      remotes: {},
+      remotes: {
+        container: "container@http://localhost:3000/remoteEntry.js",
+      },
       exposes: {
         "./Home": "./src/pages/home/index.tsx",
         "./Sidebar": "./src/components/sidebar/index.tsx",

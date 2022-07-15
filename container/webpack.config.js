@@ -2,6 +2,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 
 const deps = require("./package.json").dependencies;
+
 module.exports = {
   output: {
     publicPath: "http://localhost:3000/",
@@ -44,10 +45,13 @@ module.exports = {
       name: "container",
       filename: "remoteEntry.js",
       remotes: {
+        container: "container@http://localhost:3000/remoteEntry.js",
         app1: "app1@http://localhost:3001/remoteEntry.js",
         app2: "app2@http://localhost:3002/remoteEntry.js",
       },
-      exposes: {},
+      exposes: {
+        "./useAuth": "./src/hooks/useAuth",
+      },
       shared: {
         ...deps,
         react: {
