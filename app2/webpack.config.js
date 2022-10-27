@@ -49,6 +49,7 @@ module.exports = {
       exposes: {
         "./Home": "./src/pages/home/index.tsx",
         "./Sidebar": "./src/components/sidebar/index.tsx",
+        "./TextField": "./src/components/textfield/index.tsx",
       },
       shared: {
         ...deps,

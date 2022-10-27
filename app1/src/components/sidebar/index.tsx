@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useAuth } from "container/useAuth";
+import { TextField } from 'app2/TextField';
 
 const Sidebar = () => {
   const { token, setToken } = useAuth();
+  const [text, setText] = useState<string>('')
 
   const onClickCloseModal = () => {
     dispatchEvent(
@@ -24,6 +26,7 @@ const Sidebar = () => {
       </header>
       <main className='flex flex-col w-full gap-2 p-2'>
         <p className='text-white'>Token: {token}</p>
+        <TextField label='Text' value={text} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setText(e.target.value)} />
         <button onClick={() => setToken('AUTH TOKEN')} className='rounded border-solid border-2 border-white text-white p-2 w-28'>Set Token</button>
       </main>
     </article>

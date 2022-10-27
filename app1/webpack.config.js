@@ -45,6 +45,7 @@ module.exports = {
       filename: "remoteEntry.js",
       remotes: {
         container: "container@http://localhost:3000/remoteEntry.js",
+        app2: "app2@http://localhost:3002/remoteEntry.js",
       },
       exposes: {
         "./Home": "./src/pages/home/index.tsx",
